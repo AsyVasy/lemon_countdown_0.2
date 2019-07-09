@@ -28,26 +28,26 @@ module.exports = (function countdownAPi() {
 		//   }, req.params.keyBrowser);
 		// });
 
-		// router.post('/countdown', (req, res) => {
-		//   countdownModel.create((err, dataset) => {
-		//     console.log(dataset);
-		//     res.send(dataset);
-		//   }, req.body); // post datas ici ...
-		// });
+		router.post('/countdown', (req, res) => {
+			countdownModel.create((err, dataset) => {
+				console.log(dataset);
+				res.send(dataset);
+			}, req.body); // post datas ici ...
+		});
 
-		// router.delete('/countdown', (req, res) => {
-		//   countdownModel.remove((err, dataset) => {
-		//     if (err) return res.status(500).send(err);
-		//     return res.status(200).send(dataset);
-		//   }, req.body.id); // tableau d'ids ici ...
-		// });
+		router.delete('/countdown', (req, res) => {
+			countdownModel.remove((err, dataset) => {
+				if (err) return res.status(500).send(err);
+				return res.status(200).send(dataset);
+			}, req.body.id); // tableau d'ids ici ...
+		});
 
-		// router.patch('/countdown', (req, res) => {
-		//   countdownModel.update((err, dataset) => {
-		//     if (err) return res.status(500).send(err);
-		//     else return res.status(200).send(dataset);
-		//   }, req.body); // un tableau d'ids ici ...
-		// });
+		router.patch('/countdown', (req, res) => {
+			countdownModel.update((err, dataset) => {
+				if (err) return res.status(500).send(err);
+				else return res.status(200).send(dataset);
+			}, req.body); // un tableau d'ids ici ...
+		});
 
 		return router;
 	};
