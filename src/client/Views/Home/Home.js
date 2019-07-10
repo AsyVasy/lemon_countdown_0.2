@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { UrlAPI } from "./../../constants";
 
 class Home extends Component {
   state = {
@@ -7,7 +8,7 @@ class Home extends Component {
   };
 
   componentDidMount() {
-    this.callApi("http://localhost:9999/api/v1/countdown")
+    this.callApi(UrlAPI + "/countdown")
       .then(res => {
         console.log(res);
         this.setState({ allCountdowns: res });
@@ -24,6 +25,8 @@ class Home extends Component {
   };
 
   render() {
+    console.log("const url -->", UrlAPI);
+
     return (
       <>
         <div>Je suis la home</div>
