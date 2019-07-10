@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const db = require('./db.config.js');
 
-const api = require('./apis')(db, ['countdown']);
+const api = require('./apis')(db, ['countdown', 'password', 'theme']);
 // var cors = require('cors');
 const path = require('path');
 
