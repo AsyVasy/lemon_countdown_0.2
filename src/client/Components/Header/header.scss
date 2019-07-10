@@ -1,7 +1,23 @@
 // @import "./../utils/constants.scss";
 
-.yellowLine {
-  color: #fcff2d;
-  height: 2px;
+.whiteHeader {
+  background: white;
+  height: 105px;
   width: 100%;
+  position: fixed;
+  top: 0;
+}
+
+.yellowLine {
+  background-color: #fcff2d;
+  box-shadow: 0px 1px 9px rgba(0, 0, 0, 0.5);
+  height: 1px;
+  width: 100%;
+  margin-top: 105px;
+}
+
+.logo {
+  display: block;
+  margin: 15px auto;
+  width: 10%;
 }
