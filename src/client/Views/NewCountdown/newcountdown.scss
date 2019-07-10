@@ -1,23 +1,27 @@
 
 
 .create{
-    padding: 3em;;
+    padding: 7em;
     height: 300px;
+    margin: 3em auto;
     width: 350px;
-    .logo{
-        margin: auto;
-        width: 10em;
-        img{
-            width: 100%
-        }
-    }
+    // .logo{
+    //     margin: auto;
+    //     width: 10em;
+    //     img{
+    //         width: 100%;
+    //     }
+    // }
 
     label{
-        margin: auto;
+        display: block;
         width: 100%;
+        i{color:#4c0e9a;}
     }
 
-    input{
+    label:nth-of-type(2), label:nth-of-type(4){margin-top: 8px;}
+
+    select, input{
         background: #f3d52c;
         border-radius: 3px;
         border: none;
@@ -31,6 +35,19 @@
             background: #fff;
             color: #4c0e9a;
         }
+    }
+
+    select{margin-left: 10px; width: 50px}
+
+    span.nopswd{width: 100%;}
+
+    .timer{
+        padding: 0;
+        margin-bottom: 5px;
+        input {
+            max-width: 30px;
+        }
+
     }
 
     .pswd{
@@ -53,7 +70,7 @@
         width: 150px;
         z-index: 1;
         &:hover{
-            color: white;
+            color: #4c0e9a;
             &:before{
                 top:0;
             }

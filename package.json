@@ -3,15 +3,16 @@
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
+		"cors": "^2.8.5",
 		"mysql": "^2.17.1",
+		"node-sass": "^4.12.0",
 		"nodemon": "^1.19.1",
 		"react": "^16.8.6",
+		"react-countdown-now": "^2.1.1",
 		"react-dom": "^16.8.6",
 		"react-router-dom": "^5.0.1",
 		"react-scripts": "3.0.1",
-		"node-sass": "^4.12.0",
-		"sass": "^1.18.0",
-		"react-countdown-now": "^2.1.1"
+		"sass": "^1.18.0"
 	},
 	"scripts": {
 		"start": "react-scripts start",

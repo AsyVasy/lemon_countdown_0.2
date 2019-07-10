@@ -8,7 +8,7 @@ const Completionist = () => <span>You are good to go!</span>;
 const LemonCD = (props) => {
     return (
     <React.Fragment>
-        <Countdown date={Date.now() + props.time} onPause={0}>
+        <Countdown date={Date.now() + props.time} /*onPause={0}*/>
             <Completionist />
         </Countdown>
     </React.Fragment>
