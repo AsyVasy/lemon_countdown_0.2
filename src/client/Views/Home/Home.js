@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { UrlAPI } from "./../../constants";
+import { UrlAPI } from "../../utils/constants";
+import Header from "../../Components/Header/Header.js";
 
 class Home extends Component {
   state = {
@@ -30,6 +31,7 @@ class Home extends Component {
     return (
       <>
         <div>Je suis la home</div>
+        <Header />
         <Link to="/new-countdown">Créer un nouveau compte à rebours</Link>{" "}
       </>
     );
