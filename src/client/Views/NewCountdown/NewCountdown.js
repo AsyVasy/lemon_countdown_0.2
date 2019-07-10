@@ -1,6 +1,7 @@
 import React from "react";
-import  logo  from "../../assets/lemoncd.png";
+// import  logo  from "../../assets/lemoncd.png";
 import LemonCD from './Countdown';
+import { UrlAPI } from "../../utils/constants";
 import "./newcountdown.scss";
 
 class NewCountdown extends React.Component {
@@ -76,7 +77,7 @@ class NewCountdown extends React.Component {
     };
     if (name === "" || password === "") console.log("nothing");
     
-    else return fetch(`http://localhost:9999/api/v1/countdown`, requestOptions)
+    else return fetch(UrlAPI + "/countdown", requestOptions)
       //.then(handleResponse)
       .then(newcountdown => {
         // login successful if there's a user in the response
