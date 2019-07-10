@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import LandingPage from "./Views/LandingPage/LandingPage";
 import Home from "./Views/Home/Home";
-import NewCountdown from "./Views/NewCountdown/NewCountdown";
+import { NewCountdown } from "./Views/NewCountdown/NewCountdown";
 
 import "./App.css";
 
