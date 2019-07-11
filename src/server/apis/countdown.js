@@ -13,13 +13,13 @@ module.exports = (function countdownAPi() {
 			}, null);
 		});
 
-		// router.get('/countdown/:id', (req, res) => {
-		//   countdownModel.getByID((err, countdown) => {
-		//     if (err) return res.status(520).send(err);
-		//     console.log(countdown);
-		//     return res.status(200).send(countdown);
-		//   }, req.params.id);
-		// });
+		router.get('/countdown/:id', (req, res) => {
+			countdownModel.getByID((err, countdown) => {
+				if (err) return res.status(520).send(err);
+				console.log(countdown);
+				return res.status(200).send(countdown);
+			}, req.params.id);
+		});
 
 		// router.get('/countdown/keyBrowser/:keyBrowser', (req, res) => {
 		//   countdownModel.getByRoom((err, countdown) => {
