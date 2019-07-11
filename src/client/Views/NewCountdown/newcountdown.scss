@@ -37,7 +37,7 @@
         }
     }
 
-    select{margin-left: 10px; width: 50px}
+    select{margin-left: 10px; width: auto}
 
     span.nopswd{width: 100%;}
 
@@ -94,5 +94,10 @@
         &:hover{
             cursor: pointer
         }
+    }
+
+    .error{
+        color: #f44336;
+        font-size: 1em;
     }
 }
