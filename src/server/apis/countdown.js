@@ -30,6 +30,7 @@ module.exports = (function countdownAPi() {
 
 		router.post('/countdown', (req, res) => {
 			countdownModel.create((err, dataset) => {
+				console.log('id créé => ', dataset.insertId);
 				console.log(dataset);
 				res.send(dataset);
 			}, req.body); // post datas ici ...

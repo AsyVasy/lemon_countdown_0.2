@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { UrlAPI } from '../../utils/constants';
 import Header from '../../Components/Header/Header.js';
-// import CountdownItem from '../../Components/countdownItem/countdownItem';
+import CountdownItem from '../../Components/countdownItem/countdownItem';
 
 class EditPage extends Component {
 	state = {
@@ -11,12 +11,14 @@ class EditPage extends Component {
 	};
 
 	componentDidMount() {
-		this.callApi(UrlAPI + '/countdown/' + this.state.id_countdown)
+		this.callApi(UrlAPI + '/countdown/' + this.props.location.state.id_countdown)
 			.then(res => {
-				console.log(res);
+				// console.log(res);
 				this.setState({ actualCountdown: res });
 			})
 			.catch(err => console.log(err));
+
+		console.log('coucoucou');
 	}
 
 	callApi = async url => {
@@ -29,7 +31,7 @@ class EditPage extends Component {
 
 	displayCountdowns = () => {
 		const { theCountdown } = this.state;
-		// return theCountdown.map(e => <CountdownItem name={e.name} id={e.id} />);
+		return theCountdown.map(e => <CountdownItem name={e.name} id={e.id} />);
 	};
 
 	render() {
@@ -37,9 +39,9 @@ class EditPage extends Component {
 
 		return (
 			<>
-				<div>Je suis la EditPage</div>
 				<Header />
-				<Link to="/new-countdown">Créer un nouveau compte à rebours</Link>{' '}
+				<div>Je suis la EditPage</div>
+				<Link to="/new-countdown">Créer un nouveau compte à rebours</Link> <Link to="/home">Homz</Link>{' '}
 			</>
 		);
 	}
