@@ -8,10 +8,16 @@ import Plongee from "./../../assets/plongee.mp3";
 import Escapegame from "./../../assets/escapegame.mp3";
 
 class PlayPage extends Component {
-	state = {
+	constructor(props) {
+		super(props);
+		this.state = {
 		playedCountdown: "",
 		id_countdown: 1,
+		password:""
 	};
+	this.definePassword = this.definePassword.bind(this);
+	}
+	
 
 	componentDidMount() {
 		this.callApi(UrlAPI + '/countdown/' + this.props.location.state.id_countdown)
@@ -47,20 +53,34 @@ class PlayPage extends Component {
 		}
 	  }
 
+	  definePassword(e){
+		const { name, value } = e.target;
+		this.setState({[name] : value });
+		console.log(name, value)
+		// if(param === e.target.value) {
+		// 	window.location.href="/home"
+		// }
+	  }
 
 	render() {
 		console.log("const url -->", UrlAPI);
-        const countdown  = this.state.playedCountdown;
+		const countdown  = this.state.playedCountdown;
+		const pswd = countdown.password_name;
 
 		return (
 			<>
                 {/* <Link to="/new-countdown">Créer un nouveau compte à rebours</Link> <Link to="/home">Home</Link>{' '} */}
                 <section id="sectionCD" className={'play ' + countdown.name_theme} >
                     <h1>{ countdown.name }</h1>
-                    { countdown.msg ? (
-                    <div className="countdown"><LemonCD time={countdown.time} /*onClick={this.handlePause} */ renderer={props => "stop"}  msg={countdown.msg} className="pause"></LemonCD></div>) :
+                    { countdown.failure_message ? (
+                    <div className="countdown"><LemonCD time={countdown.time} /*onClick={this.handlePause} */ renderer={props => "stop"}  msg={countdown.failure_message} className="pause"></LemonCD></div>) :
                     <div className="countdown"><LemonCD time={countdown.time} /*onClick={this.handlePause} */ renderer={props => "stop"}  msg={'The End !'} className="pause"></LemonCD></div>
-                    }   
+                    }  
+					{
+						countdown.password ? (
+							<input name='pswd' type="text" onChange={this.definePassword}></input>
+						) : <span></span>
+					} 
 					 <audio
 						autoPlay 
 						loop

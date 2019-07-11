@@ -14,6 +14,8 @@ module.exports = function(connection) {
   };
 
   const getByID = function getUserByMail(clbk, id) {
+    // avec table password mais si pas de password dans la table = requete null!
+    // const sql = `SELECT * FROM countdowns INNER JOIN themes ON countdowns.theme = themes.id_theme INNER JOIN passwords ON passwords.countdown_id = countdowns.id WHERE countdowns.id = ?`;
     const sql = `SELECT * FROM countdowns INNER JOIN themes ON countdowns.theme = themes.id_theme WHERE countdowns.id = ?`;
     const q = connection.query(sql, id, (err, countdown) => {
       if (err) return clbk(err, null);

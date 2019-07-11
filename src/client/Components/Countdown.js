@@ -4,7 +4,7 @@ import Countdown from 'react-countdown-now';
 const LemonCD = (prop) => {
     return (
     <React.Fragment>
-        <Countdown date={Date.now() + prop.time} onClick={prop.stop} >
+        <Countdown date={Date.now() + prop.time} onClick={prop.stop} className="cd">
         <span className="msgCountdown">{prop.msg}</span>
         </Countdown>
     </React.Fragment>
