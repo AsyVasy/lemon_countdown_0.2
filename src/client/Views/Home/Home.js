@@ -26,6 +26,14 @@ class Home extends Component {
     return body;
   };
 
+  handleDeleteChild = () => {
+    this.callApi(UrlAPI + "/countdown")
+      .then(res => {
+        this.setState({ allCountdowns: res[1] });
+      })
+      .catch(err => console.log(err));
+  };
+
   displayCountdowns = () => {
     const { allCountdowns } = this.state;
     return allCountdowns.map(e => (
@@ -34,6 +42,7 @@ class Home extends Component {
         id={e.id}
         key={e.id}
         name_theme={e.name_theme}
+        handleDelete={this.handleDeleteChild}
       />
     ));
   };
@@ -46,12 +55,9 @@ class Home extends Component {
         <Header />
         <h2 className="home-title">Vos comptes à rebours existants</h2>
         {allCountdowns.length > 0 ? (
-          (<p>Vos comptes à rebours existants</p>,
-          (
-            <div className="contain">
-              <div className="list">{this.displayCountdowns()} </div>
-            </div>
-          ))
+          <div className="contain">
+            <div className="list">{this.displayCountdowns()} </div>
+          </div>
         ) : (
           <p>Vous n'avez pas encore créé de compte à rebours</p>
         )}{" "}
