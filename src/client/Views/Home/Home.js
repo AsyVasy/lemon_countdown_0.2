@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { UrlAPI } from "../../utils/constants";
 import Header from "../../Components/Header/Header.js";
 import CountdownItem from "../../Components/countdownItem/countdownItem";
+import "./Home.scss";
+import Background from "./../../assets/Lemon.jpg"
+
 
 class Home extends Component {
   state = {
@@ -36,13 +39,115 @@ class Home extends Component {
     return (
       <>
         <Header />
+        
         <h2>Vos comptes à rebours existants</h2>
         {allCountdowns.length > 0 ? (
           (<p>Vos comptes à rebours existants</p>, this.displayCountdowns())
         ) : (
           <p>Vous n'avez pas encore créé de compte à rebours</p>
         )}{" "}
+        
+        
+        <section>
+          
+        <div className="contain">
+        <div className="list">
+  
+            <div className="theme">
+            <div className="picture">
+            <img className="Background" src={Background} alt="Background" />          
+            </div>
+
+
+            <div className="commands">
+             <i className="fas fa-pen fa-2x CommandItem"></i>
+              <i className="fas fa-play fa-2x CommandItem"></i>
+              <i className="fas fa-trash-alt fa-2x CommandItem"></i>
+              </div>
+            </div>
+
+
+            <div className="theme">
+            <div className="picture">
+            <img className="Background" src={Background} alt="Background" />          
+            </div>
+
+
+            <div className="commands">
+             <i className="fas fa-pen fa-2x CommandItem"></i>
+              <i className="fas fa-play fa-2x CommandItem"></i>
+              <i className="fas fa-trash-alt fa-2x CommandItem"></i>
+              </div>
+            </div>
+
+
+            <div className="theme">
+            <div className="picture">
+            <img className="Background" src={Background} alt="Background" />          
+            </div>
+
+
+            <div className="commands">
+             <i className="fas fa-pen fa-2x CommandItem"></i>
+              <i className="fas fa-play fa-2x CommandItem"></i>
+              <i className="fas fa-trash-alt fa-2x CommandItem"></i>
+              </div>
+            </div>
+
+
+            <div className="theme">
+            <div className="picture">
+            <img className="Background" src={Background} alt="Background" />          
+            </div>
+
+
+            <div className="commands">
+             <i className="fas fa-pen fa-2x CommandItem"></i>
+              <i className="fas fa-play fa-2x CommandItem"></i>
+              <i className="fas fa-trash-alt fa-2x CommandItem"></i>
+              </div>
+            </div>
+
+            <div className="theme">
+            <div className="picture">
+            <img className="Background" src={Background} alt="Background" />          
+            </div>
+
+            <div className="commands">
+             <i className="fas fa-pen fa-2x CommandItem"></i>
+              <i className="fas fa-play fa-2x CommandItem"></i>
+              <i className="fas fa-trash-alt fa-2x CommandItem"></i>
+              </div>
+            </div>
+
+            <div className="theme">
+            <div className="picture">
+            <img className="Background" src={Background} alt="Background" />          
+            </div>
+
+            <div className="commands">
+             <i className="fas fa-pen fa-2x CommandItem"></i>
+              <i className="fas fa-play fa-2x CommandItem"></i>
+              <i className="fas fa-trash-alt fa-2x CommandItem"></i>
+              </div>
+            </div>
+
+              <div className="theme">
+             <div className="bouton">
+             <h1>+</h1>
+             </div>
+             </div>
+
+          </div>
+          </div>
+        </section>
+
         <Link to="/new-countdown">Créer un nouveau compte à rebours</Link>
+        
+
+          
+
+
       </>
     );
   }
