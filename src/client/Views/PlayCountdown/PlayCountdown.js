@@ -37,7 +37,7 @@ class PlayPage extends Component {
 		return (
 			<>
                 {/* <Link to="/new-countdown">Créer un nouveau compte à rebours</Link> <Link to="/home">Home</Link>{' '} */}
-                <section id="sectionCD" className={'play ' + countdown.name} >
+                <section id="sectionCD" className={'play ' + countdown.name_theme} >
                     <h1>{ countdown.name }</h1>
                     { countdown.msg ? (
                     <div className="countdown"><LemonCD time={countdown.time} /*onClick={this.handlePause} */ renderer={props => "stop"}  msg={countdown.msg} className="pause"></LemonCD></div>) :

@@ -13,7 +13,7 @@ module.exports = function(connection) {
   };
 
 	const getByID = function getUserByMail(clbk, id) {
-		const sql = `SELECT * FROM countdowns INNER JOIN themes ON countdowns.theme = themes.id WHERE countdowns.id = ?`;
+		const sql = `SELECT * FROM countdowns INNER JOIN themes ON countdowns.theme = themes.id_theme WHERE countdowns.id = ?`;
 		const q = connection.query(sql, id, (err, countdown) => {
 			if (err) return clbk(err, null);
 			return clbk(null, ...countdown);
