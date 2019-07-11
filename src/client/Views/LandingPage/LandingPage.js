@@ -8,19 +8,20 @@ import  logo  from "../../assets/lemoncd.png";
 function LandingPage() {
   return (
     <>
-    <section className="create1">
-          <figure className="logo1">
-            <img src={logo} alt="logo"/>
-          </figure>
+    <section className="landing">
+      <figure className="logo1">
+        <img src={logo} alt="logo"/>
+      </figure>
       
-        </section>
+        
       <div className="link11">
-      <button className="btn btn-primary"><Link to="/home"> Créer un compteur</Link>{" "}</button>
+      <button className="btn btn-primary"><Link to="/new-countdown"> Créer un compteur</Link>{" "}</button>
       
       </div>
       <div className="link12">
       <Link to="/home"> Voir tous les compteurs</Link>{" "}
       </div>
+    </section>
 
       
     </>

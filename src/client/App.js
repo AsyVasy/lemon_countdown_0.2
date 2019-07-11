@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import LandingPage from './Views/LandingPage/LandingPage';
 import EditPage from './Views/EditPage/EditPage';
+import PlayCountdown from './Views/PlayCountdown/PlayCountdown';
 import Home from './Views/Home/Home';
 import { NewCountdown } from './Views/NewCountdown/NewCountdown';
 
@@ -16,6 +17,7 @@ class App extends Component {
 					<Route path="/home" component={Home} />
 					<Route path="/new-countdown" component={NewCountdown} />
 					<Route path="/edit-countdown" component={EditPage} />
+					<Route path="/play-countdown" component={PlayCountdown} />
 				</Switch>
 			</Router>
 		);

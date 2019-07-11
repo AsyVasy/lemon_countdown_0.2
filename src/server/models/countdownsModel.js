@@ -12,13 +12,14 @@ module.exports = function(connection) {
     });
   };
 
-  const getByID = function getUserByMail(clbk, id) {
-    const sql = `SELECT * FROM countdowns WHERE id = ?`;
-    const q = connection.query(sql, id, (err, countdown) => {
-      if (err) return clbk(err, null);
-      return clbk(null, ...countdown);
-    });
-  };
+	const getByID = function getUserByMail(clbk, id) {
+		const sql = `SELECT * FROM countdowns INNER JOIN themes ON countdowns.theme = themes.id WHERE countdowns.id = ?`;
+		const q = connection.query(sql, id, (err, countdown) => {
+			if (err) return clbk(err, null);
+			return clbk(null, ...countdown);
+		});
+		console.log(q.sql);
+	};
 
   // const getByRoom = function getByRoom (clbk, keyBrowser) {
   //   const sql = 'SELECT * FROM `countdown` WHERE `keyBrowser` = ?';

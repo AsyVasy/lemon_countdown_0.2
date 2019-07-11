@@ -1,10 +1,7 @@
-.create1{
-    padding: 6em;;
-    height: 3O0px;
-    width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+.landing{
+    padding: 6em;
+    height: 300px;
+    width: 100%;
     
     .logo1{
         margin: auto;
@@ -12,20 +9,19 @@
         
         img{
             width: 100%;
-            
         }
-    }}
+    }
+    
     .link11{
+        margin-top: 3em;
         text-align: center;
         
     }
+
     .link12{
         text-align: center;
-        padding : 1em;
-        text-decoration: none;
+        text-decoration: underline;
     }
-
-
 
     button{
         border: 1px solid #f3d52c;
@@ -51,3 +47,5 @@
         cursor: pointer;
         text-decoration: none;
     }
+
+}
