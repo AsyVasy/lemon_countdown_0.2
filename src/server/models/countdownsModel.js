@@ -13,14 +13,14 @@ module.exports = function(connection) {
 		});
 	};
 
-	// const getByID = function getUserByMail (clbk, id) {
-	//   const sql = `SELECT * FROM countdown WHERE id = ?`;
-	//   const q = connection.query(sql, id, (err, countdown) => {
-	//     if (err) return clbk(err, null);
-	//     return clbk(null, ...countdown);
-	//   });
-	//   console.log(q.sql);
-	// };
+	const getByID = function getUserByMail(clbk, id) {
+		const sql = `SELECT * FROM countdowns WHERE id = ?`;
+		const q = connection.query(sql, id, (err, countdown) => {
+			if (err) return clbk(err, null);
+			return clbk(null, ...countdown);
+		});
+		console.log(q.sql);
+	};
 
 	// const getByRoom = function getByRoom (clbk, keyBrowser) {
 	//   const sql = 'SELECT * FROM `countdown` WHERE `keyBrowser` = ?';
@@ -72,7 +72,7 @@ module.exports = function(connection) {
 
 	return {
 		get,
-		// getByID,
+		getByID,
 		// getByRoom,
 		create,
 		remove,
