@@ -4,7 +4,8 @@ module.exports = function(connection) {
   const get = function get(clbk, id) {
     var sql;
 
-    sql = "SELECT * FROM countdowns;";
+    sql =
+      "SELECT * FROM countdowns INNER JOIN themes ON countdowns.theme = themes.id_theme;";
 
     connection.query(sql, [id], (error, results, fields) => {
       if (error) return clbk(error, null);
@@ -12,14 +13,14 @@ module.exports = function(connection) {
     });
   };
 
-	const getByID = function getUserByMail(clbk, id) {
-		const sql = `SELECT * FROM countdowns INNER JOIN themes ON countdowns.theme = themes.id_theme WHERE countdowns.id = ?`;
-		const q = connection.query(sql, id, (err, countdown) => {
-			if (err) return clbk(err, null);
-			return clbk(null, ...countdown);
-		});
-		console.log(q.sql);
-	};
+  const getByID = function getUserByMail(clbk, id) {
+    const sql = `SELECT * FROM countdowns INNER JOIN themes ON countdowns.theme = themes.id_theme WHERE countdowns.id = ?`;
+    const q = connection.query(sql, id, (err, countdown) => {
+      if (err) return clbk(err, null);
+      return clbk(null, ...countdown);
+    });
+    console.log(q.sql);
+  };
 
   // const getByRoom = function getByRoom (clbk, keyBrowser) {
   //   const sql = 'SELECT * FROM `countdown` WHERE `keyBrowser` = ?';

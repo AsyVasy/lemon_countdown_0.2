@@ -4,6 +4,8 @@ import { UrlAPI } from "../../utils/constants";
 import Header from "../../Components/Header/Header.js";
 import CountdownItem from "../../Components/countdownItem/countdownItem";
 
+import "./Home.scss";
+
 class Home extends Component {
   state = {
     allCountdowns: []
@@ -27,18 +29,29 @@ class Home extends Component {
   displayCountdowns = () => {
     const { allCountdowns } = this.state;
     return allCountdowns.map(e => (
-      <CountdownItem name={e.name} id={e.id} key={e.id} />
+      <CountdownItem
+        name={e.name}
+        id={e.id}
+        key={e.id}
+        name_theme={e.name_theme}
+      />
     ));
   };
 
   render() {
     const { allCountdowns } = this.state;
+    console.log("results -->", allCountdowns);
     return (
       <>
         <Header />
-        <h2>Vos comptes à rebours existants</h2>
+        <h2 className="home-title">Vos comptes à rebours existants</h2>
         {allCountdowns.length > 0 ? (
-          (<p>Vos comptes à rebours existants</p>, this.displayCountdowns())
+          (<p>Vos comptes à rebours existants</p>,
+          (
+            <div className="contain">
+              <div className="list">{this.displayCountdowns()} </div>
+            </div>
+          ))
         ) : (
           <p>Vous n'avez pas encore créé de compte à rebours</p>
         )}{" "}

@@ -1,0 +1,16 @@
+.contain {
+  height: auto;
+  width: 100vw;
+}
+
+.list {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.home-title {
+  font-family: "Lato", sans-serif;
+}
