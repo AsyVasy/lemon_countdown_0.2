@@ -3,6 +3,7 @@ import React from "react";
 import LemonCD from '../../Components/Countdown';
 import Theme from '../../Components/Theme/Theme';
 import Header from '../../Components/Header/Header.js';
+import { Link } from "react-router-dom";
 import { UrlAPI } from "../../utils/constants";
 import "./newcountdown.scss";
 class NewCountdown extends React.Component {
@@ -48,6 +49,8 @@ class NewCountdown extends React.Component {
       this.createCountdown(name, boolpswd, time, themeStorage);
     } else if(localStorage.getItem('idTheme') === "Choose"){
       this.createCountdown(name, boolpswd, time, notheme);
+    } else if(!localStorage.getItem('idTheme')){
+      this.createCountdown(name, boolpswd, time, notheme)
     }
     else this.createCountdown(name, boolpswd, time, notheme);
     
@@ -185,14 +188,17 @@ class NewCountdown extends React.Component {
           </form>
           {this.state.error ? (<p className="error">{this.state.error}</p>): <p></p>}
 
-        { !this.state.error && this.state.submitted ? (<p>
-          <span>{this.state.name}</span>
-          <br/>
-          <span>{this.state.password}</span>
-          <br/>
-          <LemonCD time={parseInt((this.state.hour * 3600000 + this.state.min * 60000 + this.state.sec * 1000), 10)} /*onClick={this.handlePause} */ renderer={props => "stop"}  className="pause"></LemonCD>
-          </p>) : <p></p>}
-        {/* <LemonCD/> */}
+          { !this.state.error && this.state.submitted ? (<p>
+            <span>{this.state.name}</span>
+            <br/>
+            <span>{this.state.password}</span>
+            <br/>
+            <LemonCD time={parseInt((this.state.hour * 3600000 + this.state.min * 60000 + this.state.sec * 1000), 10)} /*onClick={this.handlePause} */ renderer={props => "stop"}  className="pause"></LemonCD>
+            </p>) : <p></p>}
+          {/* <LemonCD/> */}
+          <div className="link12">
+          <Link to="/home"> Voir tous les compteurs</Link>
+          </div>
         </section>
       </React.Fragment>
     );

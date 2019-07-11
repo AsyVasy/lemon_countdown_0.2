@@ -2,19 +2,22 @@
 
 .whiteHeader {
   background: white;
+  border-bottom: 1px solid #fcff2d;
+  box-shadow: 0px 1px 9px rgba(0, 0, 0, 0.5);
   height: 105px;
   width: 100%;
   position: fixed;
   top: 0;
+  z-index: 2;
 }
 
-.yellowLine {
-  background-color: #fcff2d;
-  box-shadow: 0px 1px 9px rgba(0, 0, 0, 0.5);
-  height: 1px;
-  width: 100%;
-  margin-top: 105px;
-}
+// .yellowLine {
+//   background-color: #fcff2d;
+//   box-shadow: 0px 1px 9px rgba(0, 0, 0, 0.5);
+//   height: 1px;
+//   width: 100%;
+//   margin-top: 105px;
+// }
 
 .logo {
   display: block;

@@ -35,7 +35,7 @@ class EditPage extends Component {
 		return (
 			<>
 				<Header />
-				<div>Je suis la Edit Page</div>
+				{/* <div>Je suis la Edit Page</div> */}
 
 				<EditForm countdown={actualCountdown}>
 					<Completionist />
