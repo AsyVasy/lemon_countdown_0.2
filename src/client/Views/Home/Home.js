@@ -12,7 +12,6 @@ class Home extends Component {
   componentDidMount() {
     this.callApi(UrlAPI + "/countdown")
       .then(res => {
-        console.log(res);
         this.setState({ allCountdowns: res[1] });
       })
       .catch(err => console.log(err));
@@ -22,13 +21,14 @@ class Home extends Component {
     const response = await fetch(url);
     const body = await response.json();
     if (response.status !== 200) throw Error(body.message);
-    // console.log(body);
     return body;
   };
 
   displayCountdowns = () => {
     const { allCountdowns } = this.state;
-    return allCountdowns.map(e => <CountdownItem name={e.name} id={e.id} />);
+    return allCountdowns.map(e => (
+      <CountdownItem name={e.name} id={e.id} key={e.id} />
+    ));
   };
 
   render() {
