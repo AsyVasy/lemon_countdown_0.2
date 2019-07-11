@@ -9,9 +9,17 @@ class CountdownItem extends Component {
 
     return (
       <>
-        {" "}
-        <Link to="/edit-countdown">
-          <div className="item">{this.props.name}</div>
+        <div className="item">{this.props.name}</div>
+        <Link to="/play-countdown">play</Link>
+        <Link
+          to={{
+            pathname: "/edit-countdown",
+            state: {
+              id_countdown: this.props.id
+            }
+          }}
+        >
+          edit
         </Link>
       </>
     );

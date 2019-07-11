@@ -28,7 +28,7 @@ class Home extends Component {
 
   displayCountdowns = () => {
     const { allCountdowns } = this.state;
-    return allCountdowns.map(e => <CountdownItem name={e.name} />);
+    return allCountdowns.map(e => <CountdownItem name={e.name} id={e.id} />);
   };
 
   render() {
