@@ -5,7 +5,7 @@ module.exports = function(connection) {
     var sql;
 
     sql =
-      "SELECT * FROM countdowns INNER JOIN themes ON countdowns.theme = themes.id_theme;";
+      "SELECT * FROM countdowns INNER JOIN themes ON countdowns.theme = themes.id_theme ORDER BY countdowns.id DESC;";
 
     connection.query(sql, [id], (error, results, fields) => {
       if (error) return clbk(error, null);

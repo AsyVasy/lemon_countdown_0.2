@@ -4,6 +4,7 @@ import LemonCD from './EditPage';
 import Theme from '../../Components/Theme/Theme';
 import { UrlAPI } from '../../utils/constants';
 import './editcountdown.scss';
+import { Link } from "react-router-dom";
 class EditForm extends React.Component {
 	constructor(props) {
 		super(props);
@@ -205,7 +206,7 @@ class EditForm extends React.Component {
 									this.state.hour * 3600000 + this.state.min * 60000 + this.state.sec * 1000,
 									10
 								)}
-								/*onClick={this.handlePause} */ renderer={props => 'stop'}
+								renderer={props => 'stop'}
 								className="pause"
 							/>
 						</p>
@@ -213,6 +214,11 @@ class EditForm extends React.Component {
 						<p />
 					)}
 					{/* <LemonCD/> */}
+					
+					<div className="link12">
+					<Link to="/home"> Voir tous les compteurs</Link>
+					</div>
+					
 				</section>
 			</React.Fragment>
 		);

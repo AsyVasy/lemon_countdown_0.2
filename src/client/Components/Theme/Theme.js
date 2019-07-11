@@ -46,7 +46,7 @@ class Theme extends Component {
   render() {
     console.log("const url -->", UrlAPI);
     const listCountdowns = this.state.allTheme.map((number) =>
-        <option key={number.id} value={number.id}>{number.name_theme}</option>
+        <option key={number.id_theme} value={number.id_theme}>{number.name_theme}</option>
     );
     return (
 
