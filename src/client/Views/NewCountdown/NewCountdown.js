@@ -1,7 +1,8 @@
 import React from "react";
 // import  logo  from "../../assets/lemoncd.png";
-import LemonCD from './Countdown';
+import LemonCD from '../../Components/Countdown';
 import Theme from '../../Components/Theme/Theme';
+import Header from '../../Components/Header/Header.js';
 import { UrlAPI } from "../../utils/constants";
 import "./newcountdown.scss";
 class NewCountdown extends React.Component {
@@ -114,6 +115,7 @@ class NewCountdown extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <Header />
         <section className="create">
           {/* <figure className="logo">
             <img src={logo} alt="logo"/>

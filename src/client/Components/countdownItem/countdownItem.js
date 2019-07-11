@@ -28,7 +28,14 @@ class CountdownItem extends Component {
     return (
       <>
         <div className="item">{this.props.name}</div>
-        <Link to="/play-countdown">play</Link>
+        <Link
+          to={{
+            pathname: "/play-countdown",
+            state: {
+              id_countdown: this.props.id
+            }
+          }}
+        >play</Link>
         <Link
           to={{
             pathname: "/edit-countdown",
