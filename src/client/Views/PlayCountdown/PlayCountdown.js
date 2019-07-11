@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import LemonCD from '../../Components/Countdown';
 import { UrlAPI } from '../../utils/constants';
 import "./playcountdown.scss";
+import Matrix from "./../../assets/matrix.mp3";
+import Cuisine from "./../../assets/cuisine.mp3";
+import Plongee from "./../../assets/plongee.mp3";
+import Escapegame from "./../../assets/escapegame.mp3";
 
 class PlayPage extends Component {
 	state = {
@@ -28,6 +32,20 @@ class PlayPage extends Component {
 		return body;
 	};
 
+	renderSound(param) {
+		switch (param) {
+		  case "matrix":
+			return Matrix;
+		  case "cuisine":
+			return Cuisine;
+		  case "plongee":
+			return Plongee;
+		  case "escapegame":
+			return Escapegame;
+		  default:
+			return Matrix;
+		}
+	  }
 
 
 	render() {
@@ -43,6 +61,13 @@ class PlayPage extends Component {
                     <div className="countdown"><LemonCD time={countdown.time} /*onClick={this.handlePause} */ renderer={props => "stop"}  msg={countdown.msg} className="pause"></LemonCD></div>) :
                     <div className="countdown"><LemonCD time={countdown.time} /*onClick={this.handlePause} */ renderer={props => "stop"}  msg={'The End !'} className="pause"></LemonCD></div>
                     }   
+					 <audio
+						autoPlay 
+						loop
+						src={this.renderSound(countdown.name_theme)}>
+							Your browser does not support the
+							<code>audio</code> element.
+					</audio>
                 </section>
 			</>
 		);
