@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { UrlAPI } from "../../utils/constants";
 import Matrix from "./../../assets/matrix.jpg";
 import Cuisine from "./../../assets/cuisine.jpeg";
+import Plongee from "./../../assets/plongee.jpg";
+import Escapegame from "./../../assets/escapegame.jpg";
 
 import "./countdownItem.scss";
 
@@ -26,14 +28,30 @@ class CountdownItem extends Component {
       .catch(err => console.log(err));
   }
 
-  render() {
-    const Background = this.props.name_theme === "matrix" ? Matrix : Cuisine;
+  renderBackground(param) {
+    switch (param) {
+      case "matrix":
+        return Matrix;
+      case "cuisine":
+        return Cuisine;
+      case "plongee":
+        return Plongee;
+      case "escapegame":
+        return Escapegame;
+      default:
+        return Matrix;
+    }
+  }
 
+  render() {
     return (
       <>
         <div className="itemWrapper">
           <div className="picture">
-            <img className="Background" src={Background} />
+            <img
+              className="Background"
+              src={this.renderBackground(this.props.name_theme)}
+            />
             <p className="countdown_name">{this.props.name}</p>
           </div>
           <div className="commands">
