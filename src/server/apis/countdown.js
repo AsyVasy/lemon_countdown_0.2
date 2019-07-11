@@ -8,8 +8,6 @@ module.exports = (function countdownAPi() {
     );
 
     router.get("/countdown", (req, res) => {
-      console.log("ca get");
-
       countdownModel.get((err, dataset) => {
         res.send(dataset);
       }, null);
@@ -18,7 +16,6 @@ module.exports = (function countdownAPi() {
     router.get("/countdown/:id", (req, res) => {
       countdownModel.getByID((err, countdown) => {
         if (err) return res.status(520).send(err);
-        console.log(countdown);
         return res.status(200).send(countdown);
       }, req.params.id);
     });

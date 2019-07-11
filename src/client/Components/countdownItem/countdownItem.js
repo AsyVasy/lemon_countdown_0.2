@@ -5,8 +5,8 @@ import { UrlAPI } from "../../utils/constants";
 import "./countdownItem.scss";
 
 class CountdownItem extends Component {
-  callApi = async url => {
-    const response = await fetch(url);
+  callApi = async (url, params) => {
+    const response = await fetch(url, params);
     const body = await response.json();
     if (response.status !== 200) throw Error(body.message);
     return body;
