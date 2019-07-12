@@ -22,8 +22,12 @@ class CountdownItem extends Component {
       headers: { "content-type": "application/json" }
     };
     this.callApi(UrlAPI + "/countdown/" + this.props.id, fetch_param)
-      .then(res => {
-        console.log("res depuis le back -->", res);
+      .then(response => {
+        console.log(response);
+        if (response) {
+          this.props.handleDelete();
+        }
+        return response;
       })
       .catch(err => console.log(err));
   }
