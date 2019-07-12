@@ -6,14 +6,19 @@ import { EditForm } from './EditForm';
 // import CountdownItem from '../../Components/countdownItem/countdownItem';
 
 class EditPage extends Component {
+	_isMounted = false;
 	state = {
 		actualCountdown: [],
+		countdown_id: null,
 	};
 
 	componentDidMount() {
+		this._isMounted = true;
 		this.callApi(UrlAPI + '/countdown/' + this.props.location.state.id_countdown)
 			.then(res => {
-				this.setState({ actualCountdown: res });
+				if (this._isMounted) {
+					this.setState({ actualCountdown: res });
+				}
 			})
 			.catch(err => console.log(err));
 	}
@@ -28,9 +33,6 @@ class EditPage extends Component {
 	render() {
 		const { actualCountdown } = this.state;
 		const Completionist = () => <span>You are good to go!</span>;
-
-		// console.log('const url -->', UrlAPI);
-		// console.log('const actualCountdown -->', actualCountdown);
 
 		return (
 			<>
