@@ -61,6 +61,9 @@ class Home extends Component {
         ) : (
           <p>Vous n'avez pas encore créé de compte à rebours</p>
         )}{" "}
+        <div className="bouton">
+          <h1>+</h1>
+        </div>
         <Link to="/new-countdown">Créer un nouveau compte à rebours</Link>
       </>
     );

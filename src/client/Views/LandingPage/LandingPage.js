@@ -16,7 +16,7 @@ function LandingPage() {
         </div>
         <div className="link11">
           <button className="btn btn-primary">
-            <Link to="/new-countdown"> ENTRER</Link>{" "}
+            <Link to="/home"> ENTRER</Link>{" "}
           </button>
         </div>
       </section>
