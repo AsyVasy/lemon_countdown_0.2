@@ -4,7 +4,7 @@ import LemonCD from './EditPage';
 import Theme from '../../Components/Theme/Theme';
 import { UrlAPI } from '../../utils/constants';
 import './editcountdown.scss';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 class EditForm extends React.Component {
 	constructor(props) {
 		super(props);
@@ -39,18 +39,16 @@ class EditForm extends React.Component {
 	handleChange(e) {
 		const { name, value } = e.target;
 		this.setState({ [name]: value });
-		console.log(name, value);
 	}
 
 	handleSubmit(e) {
 		e.preventDefault();
 		let time;
 		let { name, hour, min, sec, boolpswd } = this.state;
-		// name === '' ? (name = this.props.countdown.name) : (name = name);
-		if ((name = '')) {
+		if (name === '') {
 			name = this.props.countdown.name;
+		} else {
 		}
-		// console.log(name, 'toutoutoutoutoutoutoutouotutou');
 		if (((hour === min) === sec) === null) {
 			time = this.props.countdown.time;
 		} else {
@@ -60,7 +58,6 @@ class EditForm extends React.Component {
 		const notheme = null;
 		if (localStorage.getItem('idTheme')) {
 			const themeStorage = localStorage.getItem('idTheme');
-			// console.log('coucou theme', themeStorage);
 			this.editCountdown(name, boolpswd, time, themeStorage);
 		} else if (localStorage.getItem('idTheme') === 'Choose') {
 			this.editCountdown(name, boolpswd, time, notheme);
@@ -70,7 +67,6 @@ class EditForm extends React.Component {
 	//boolean password
 	handleClick(e) {
 		e.preventDefault();
-		console.log(this.state.boolpswd);
 		if (this.state.boolpswd) {
 			this.setState({ boolpswd: false });
 		} else {
@@ -85,39 +81,36 @@ class EditForm extends React.Component {
 
 	editCountdown(name, password, time, theme) {
 		const id = this.props.countdown.id;
+
+		if (name === '') {
+			name = this.props.countdown.name;
+		}
+		if (time === 0) {
+			time = this.props.countdown.time;
+		}
+		if (password === '') {
+			password = this.props.countdown.password;
+		}
 		const requestOptions = {
 			method: 'PATCH',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ name, password, time, theme, id }),
 		};
-		if (name === '') {
-			this.setState({ error: 'Veuillez mettre un nom' });
-		} else if (time === 0) {
-			this.setState({ error: 'Veuillez mettre un temps' });
-		} else
-			return (
-				fetch(UrlAPI + '/countdown', requestOptions)
-					//.then(handleResponse)
-					.then(EditForm => {
-						this.setState({ error: '' });
-						// login successful if there's a user in the response
-						if (EditForm) {
-							// store user details and basic auth credentials in local storage
-							// to keep user logged in between page refreshes
-							// user.authdata = window.btoa(username + ":" + password);
-							// localStorage.setItem("user", JSON.stringify(user));
-							window.location.href = '/home';
-							localStorage.clear('idTheme');
-						}
 
-						return EditForm;
-					})
-			);
+		return (
+			fetch(UrlAPI + '/countdown', requestOptions)
+				//.then(handleResponse)
+				.then(EditForm => {
+					if (EditForm) {
+						window.location.href = '/home';
+						localStorage.clear('idTheme');
+					}
+					return EditForm;
+				})
+		);
 	}
 
 	render() {
-		// console.log(this.props.countdown);
-
 		return (
 			<React.Fragment>
 				<section className="create">
@@ -136,7 +129,7 @@ class EditForm extends React.Component {
 							onChange={this.handleChange}
 						/>
 						<label htmlFor="boolpswd" onClick={this.handleClick} className="pswd">
-							Mot de passe {' '}
+							Mot de passe{' '}
 							{this.state.boolpswd ? (
 								<i className="fas fa-check-square" />
 							) : (
@@ -214,11 +207,10 @@ class EditForm extends React.Component {
 						<p />
 					)}
 					{/* <LemonCD/> */}
-					
+
 					<div className="link12">
-					<Link to="/home">Accueil</Link>
+						<Link to="/home">Accueil</Link>
 					</div>
-					
 				</section>
 			</React.Fragment>
 		);
