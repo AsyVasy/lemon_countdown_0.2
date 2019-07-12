@@ -124,9 +124,9 @@ class EditForm extends React.Component {
 					{/* <figure className="logo">
             <img src={logo} alt="logo"/>
           </figure> */}
-
+					<h1>Modifier le compte à rebours</h1>
 					<form name="form" onSubmit={this.handleSubmit}>
-						<label htmlFor="name">Name</label>
+						<label htmlFor="name">Nom du compte à rebours</label>
 						<input
 							type="text"
 							// className="form-control"
@@ -136,7 +136,7 @@ class EditForm extends React.Component {
 							onChange={this.handleChange}
 						/>
 						<label htmlFor="boolpswd" onClick={this.handleClick} className="pswd">
-							Password ?{' '}
+							Mot de passe {' '}
 							{this.state.boolpswd ? (
 								<i className="fas fa-check-square" />
 							) : (
@@ -155,7 +155,7 @@ class EditForm extends React.Component {
 							<span />
 						)}
 						<br />
-						<label htmlFor="time">Time</label>
+						<label htmlFor="time">Durée du compte à rebours</label>
 						<span className="timer">
 							<input
 								type="text"
@@ -187,10 +187,10 @@ class EditForm extends React.Component {
 								step="1"
 							/>
 						</span>
-						<label htmlFor="name">Theme</label>
+						<label htmlFor="name">Thème</label>
 						<Theme onChange={this.handleChange} />
 						<div className="form-group">
-							<button className="btn btn-primary">EDIT</button>
+							<button className="btn btn-primary">MODIFIER</button>
 						</div>
 					</form>
 					{this.state.error ? <p className="error">{this.state.error}</p> : <p />}
@@ -216,7 +216,7 @@ class EditForm extends React.Component {
 					{/* <LemonCD/> */}
 					
 					<div className="link12">
-					<Link to="/home"> Voir tous les compteurs</Link>
+					<Link to="/home">Accueil</Link>
 					</div>
 					
 				</section>

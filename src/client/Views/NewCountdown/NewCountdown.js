@@ -124,9 +124,10 @@ class NewCountdown extends React.Component {
             <img src={logo} alt="logo"/>
           </figure> */}
       
+          <h1>Création du compte à rebours</h1>
         
           <form name="form" onSubmit={this.handleSubmit}>
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name">Nom du compte à rebours</label>
             <input
               type="text"
               className="form-control"
@@ -134,7 +135,7 @@ class NewCountdown extends React.Component {
               // value={username}
               onChange={this.handleChange}
             />
-            <label htmlFor="boolpswd" onClick={this.handleClick} className="pswd">Password ? {
+            <label htmlFor="boolpswd" onClick={this.handleClick} className="pswd">Mettre un mot de passe ? {
                 this.state.boolpswd ? (<i className="fas fa-check-square"></i>):<i className="far fa-square"></i>
             }</label>
             {
@@ -147,7 +148,7 @@ class NewCountdown extends React.Component {
               />):<span></span>
             }
             <br/>
-            <label htmlFor="time">Time</label>
+            <label htmlFor="time">Durée du compte à rebours</label>
             <span className="timer">
             <input
               type="text"
@@ -179,11 +180,10 @@ class NewCountdown extends React.Component {
               step="1"
             />
             </span>
-            <label htmlFor="name">Theme</label>
+            <label htmlFor="name">Choisir un thème</label>
             <Theme onChange={this.handleChange} />
             <div className="form-group">
-            
-              <button className="btn btn-primary">GO</button>
+              <button className="btn btn-primary">CRÉER</button>
             </div>
           </form>
           {this.state.error ? (<p className="error">{this.state.error}</p>): <p></p>}
@@ -197,7 +197,7 @@ class NewCountdown extends React.Component {
             </p>) : <p></p>}
           {/* <LemonCD/> */}
           <div className="link12">
-          <Link to="/home"> Voir tous les compteurs</Link>
+          <Link to="/home">Accueil</Link>
           </div>
         </section>
       </React.Fragment>
