@@ -5,6 +5,7 @@ import Matrix from "./../../assets/matrix.jpg";
 import Cuisine from "./../../assets/cuisine.jpeg";
 import Plongee from "./../../assets/plongee.jpg";
 import Escapegame from "./../../assets/escapegame.jpg";
+import Default from "./../../assets/default-vignette.jpg";
 
 import "./countdownItem.scss";
 
@@ -43,7 +44,7 @@ class CountdownItem extends Component {
       case "escapegame":
         return Escapegame;
       default:
-        return Matrix;
+        return Default;
     }
   }
 

@@ -4,7 +4,7 @@ module.exports = function(connection) {
 	const get = function get(clbk, id) {
 		var sql;
 
-		sql = 'SELECT * FROM themes;';
+		sql = 'SELECT * FROM themes ORDER BY id_theme DESC;';
 
 		connection.query(sql, [id], (error, results, fields) => {
 			// return console.log(this.sql);

@@ -17,11 +17,71 @@
 }
 
 .bouton {
-  background-color: #fcff2d;
-  border-radius: 100%;
-  width: 70px;
-  height: 70px;
-  text-align: center;
-  padding-top: 20px;
+  border: .5px solid #4c0e9a;
+  background-color: white;
+  color: #4c0e9a;
+  border-radius: 50%;
+  height: 60px;
+  font-weight: bolder;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 10px auto;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  transition: 80ms ease-in;
+  right: 5%;
+  width: 60px;
+  z-index:1;
+  overflow: hidden;
+
+  span{  
+    font-size: 20pt;
+    line-height: 60px;
+    height: 60px;
+    width: 60px;
+  }
+
+
+
+  &:before {
+    content: "";
+    background: #f3d52c;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: -1;
+    -webkit-transition: top 0.09s ease-in;
+
+  }
+
+  &:hover{
+    box-shadow: 1px 1px 2px rgba(0,0,0,.5);
+    cursor: pointer;
+    transition: 200ms;
+
+    &:before{
+      top:0;
+    }
+  }
+
+ 
 }
+ .hidecreate{
+   background: #fff;
+    color: #4c0e9a;
+    font-size: 10pt;
+    font-weight: 500;
+    opacity : 0;
+    margin-top: 16px;
+    position: fixed;
+    right: 3.5%;
+    top:60%;
+    width: 100px;
+  }
+
+
+  .bouton:hover .hidecreate{
+    opacity: 1
+  }

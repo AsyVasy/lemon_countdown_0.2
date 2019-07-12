@@ -1,6 +1,6 @@
 import React from "react";
 // import  logo  from "../../assets/lemoncd.png";
-import LemonCD from '../../Components/Countdown';
+// import LemonCD from '../../Components/Countdown';
 import Theme from '../../Components/Theme/Theme';
 import Header from '../../Components/Header/Header.js';
 import { Link } from "react-router-dom";
@@ -42,12 +42,12 @@ class NewCountdown extends React.Component {
     this.setState(
       {submitted : true}
     )
-    const notheme = null;
+    const notheme = 5;
     if(localStorage.getItem('idTheme')){
       const themeStorage = localStorage.getItem('idTheme');
       console.log('coucou theme', themeStorage)
       this.createCountdown(name, boolpswd, time, themeStorage);
-    } else if(localStorage.getItem('idTheme') === "Choose"){
+    } else if(localStorage.getItem('idTheme') === "no"){
       this.createCountdown(name, boolpswd, time, notheme);
     } else if(!localStorage.getItem('idTheme')){
       this.createCountdown(name, boolpswd, time, notheme)
@@ -125,7 +125,7 @@ class NewCountdown extends React.Component {
           </figure> */}
       
           <h1>Création du compte à rebours</h1>
-        
+          {this.state.error ? (<p className="error">{this.state.error}</p>): <p></p>}
           <form name="form" onSubmit={this.handleSubmit}>
             <label htmlFor="name">Nom du compte à rebours</label>
             <input
@@ -186,15 +186,15 @@ class NewCountdown extends React.Component {
               <button className="btn btn-primary">CRÉER</button>
             </div>
           </form>
-          {this.state.error ? (<p className="error">{this.state.error}</p>): <p></p>}
+          
 
-          { !this.state.error && this.state.submitted ? (<p>
+          {/* { !this.state.error && this.state.submitted ? (<p>
             <span>{this.state.name}</span>
             <br/>
             <span>{this.state.password}</span>
             <br/>
-            <LemonCD time={parseInt((this.state.hour * 3600000 + this.state.min * 60000 + this.state.sec * 1000), 10)} /*onClick={this.handlePause} */ renderer={props => "stop"}  className="pause"></LemonCD>
-            </p>) : <p></p>}
+            <LemonCD time={parseInt((this.state.hour * 3600000 + this.state.min * 60000 + this.state.sec * 1000), 10)} renderer={props => "stop"}  className="pause"></LemonCD>
+            </p>) : <p></p>} */}
           {/* <LemonCD/> */}
           <div className="link12">
           <Link to="/home">Accueil</Link>
