@@ -7,7 +7,9 @@
     }
     height: 100vh;
     .countdown{
+        border-radius: 5px;
         height : 30vh;
+        max-height : 250px;
         left: 50%;
         font-size: 4em;
         text-align: center;
@@ -16,17 +18,17 @@
         transform: translate(-50%,-50%);
         overflow: hidden;
         width: 40%;
+
+        span{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
     }
 
     .msgCountdown{
         font-size: 2rem;
-    }
-
-    .cd{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-40%, -50%)
     }
 
     input{
@@ -38,7 +40,7 @@
         padding: 5px;;
         width: 250px;
         left: 50%;
-        transform: translateX(-50%)
+        transform: translateX(-50%);
     }
 }
 
@@ -59,6 +61,7 @@
         background:black;
     }
 }
+
 
 .cuisine{
     background: url('../../assets/cuisine.jpeg');
@@ -113,5 +116,26 @@
         border: 4px solid #6b489e;
         color: #6b489e;
         background:#f6bd6690;
+    }
+}
+
+
+.default{
+    background: url('../../assets/default.jpg');
+    background-size: cover;
+    .countdown{
+        background:#f3d52c;
+        border: 4px solid #4c0e9a;
+        color: #4c0e9a;
+        font-family: 'Lato', sans-serif;
+        font-size: 4rem;
+        text-shadow: 1px 1px 1px white;
+        padding-top: 3.5rem;
+    }
+    
+    input{
+        border: 4px solid #4c0e9a;
+        color: #4c0e9a;
+        background:#f3d52c;
     }
 }

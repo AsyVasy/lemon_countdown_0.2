@@ -58,7 +58,6 @@ class Theme extends Component {
                 onChange={this.handleChange} 
                 id = "selectTheme"
             >
-            <option>Choose</option>
             {listCountdowns}
             </select>
         

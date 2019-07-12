@@ -65,7 +65,7 @@ class PlayPage extends Component {
 	render() {
 		console.log("const url -->", UrlAPI);
 		const countdown  = this.state.playedCountdown;
-		const pswd = countdown.password_name;
+		// const pswd = countdown.password_name;
 
 		return (
 			<>
