@@ -41,12 +41,15 @@ img {
 
 .commands {
   border: #4c0e9a solid 1px;
+  background: #fff;
+  bottom: 0;
   height: 25%;
   width: 80%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   padding: 3%;
+  position: absolute;
 }
 
 .CommandItem {
